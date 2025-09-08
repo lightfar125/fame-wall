@@ -1,0 +1,6 @@
+name = "fame-wall-worker"
+main = "worker.js"
+compatibility_date = "2025-09-06"
+
+# 可以自定义一个 route，绑定到你的域名
+# routes = [{ pattern = "fame.example.com/*", zone_id = "xxx" }]
