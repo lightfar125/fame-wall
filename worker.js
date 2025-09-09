@@ -1,6 +1,6 @@
 export default {
   async fetch(request, env) {
-    let response = await fetch("https://raw.githubusercontent.com/你的用户名/fame-wall/main/fame-log.txt");
+    let response = await fetch("https://raw.githubusercontent.com/lightfar125/fame-wall/main/fame-log.txt");
     let text = await response.text();
 
     return new Response(`
