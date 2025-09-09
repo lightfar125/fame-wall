@@ -2,14 +2,14 @@ name: Daily Fame Record
 
 on:
   schedule:
-    - cron: "0 9 * * *"   # 每天 00:00 UTC
+    - cron: "0 16 * * *"   # 每天 00:00 新加坡/马来西亚时间 (UTC+8)
   workflow_dispatch:
 
 jobs:
   add-name:
     runs-on: ubuntu-latest
     permissions:
-      contents: write   # ✅ 允许 Actions 推送到 repo
+      contents: write   # 允许 Actions 推送到 repo
     steps:
       - uses: actions/checkout@v3
 
@@ -21,9 +21,9 @@ jobs:
       - name: Add Name Entry
         run: |
           DATE=$(date +'%Y-%m-%d')
-          mkdir -p daily                   # ✅ 确保 daily 文件夹存在
+          mkdir -p daily
           echo "许光远 Khor Kuang Yen" >> fame-log.txt
           echo "$DATE - 许光远 Khor Kuang Yen" >> daily/$DATE.txt
           git add .
           git commit -m "Daily Fame Entry for $DATE" || echo "No changes to commit"
-          git push
+          git push origin HEAD:${GITHUB_REF#refs/heads/}
