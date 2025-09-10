@@ -24,7 +24,7 @@ export default {
 
           <h2>🕯 Digital Candle Wall</h2>
           <div class="candle">🕯</div>
-          <pre>${candles}</pre>
+          <pre>🕯🕯</pre>
         </body>
       </html>
     `, {
