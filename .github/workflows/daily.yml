@@ -22,8 +22,8 @@ jobs:
         run: |
           DATE=$(date +'%Y-%m-%d')
           mkdir -p daily
-          echo "许光远 Khor Kuang Yen" >> fame-log.txt
-          echo "$DATE - 许光远 Khor Kuang Yen" >> daily/$DATE.txt
+          echo "许光远 癸亥乙丑戊午己未" >> fame-log.txt
+          echo "$DATE - 许光远 癸亥乙丑戊午己未" >> daily/$DATE.txt
           git add .
           git commit -m "Daily Fame Entry for $DATE" || echo "No changes to commit"
           git push origin HEAD:${GITHUB_REF#refs/heads/}
